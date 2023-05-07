@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Us | TradeLinks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .cont {
+            text-align: center;
+            color: #fff;
+        }
+
+        .cont h2 {
+            font-size: 40px;
+        }
+
+        .cont .red {
+            color: #853535;
+            font-size: 60px;
+        }
+
+        .cont .green {
+            color: #23696D;
+            font-size: 60px;
+        }
+
+        .cross {
+            text-align: center;
+            color: #fff;
+        }
+
+        .c {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .c:hover {
+            background-color: #333;
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        p {
+            font-size: large;
+        }
+
+        .navbar {
+            background-color: #333;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar-logo {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .navbar-menu {
+            display: flex;
+        }
+
+        .navbar-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar-list li {
+            margin-right: 20px;
+        }
+
+        .navbar-list li:last-child {
+            margin-right: 0;
+        }
+
+        .navbar-list a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .navbar-search {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-search form {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-search input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .navbar-search button[type="submit"] {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .navbar-search button[type="submit"]:hover {
+            background-color: #333;
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar-register {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-register-btn {
+            background-color: #fff;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .navbar-register-btn:hover {
+            background-color: #333;
+            color: #fff;
+            transition: all 0.3s ease-in-out
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 50px 0;
+            color: #fff;
+        }
+
+        .about-section h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            padding: 50px 0;
+            color: #fff;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+        .mission-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .mission-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Feedback Section */
+        .feedback-section {
+            padding: 50px 0;
+            color: #fff;
+        }
+
+        .feedback-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .feedback-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .feedback-section label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .feedback-section input,
+        .feedback-section textarea {
+            font-size: 1.2rem;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+        }
+
+        .feedback-section textarea {
+            height: 150px;
+        }
+
+        .feedback-section .be {
+            background-color: #fff;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .feedback-section button:hover {
+            background-color: #333;
+            color: #fff;
+            transition: all 0.3s ease-in-out
+        }
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #F5F5F5;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p {
+            margin: 0;
+            color: #000;
+        }
+
+        footer nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            font-size: 20px;
+        }
+
+        footer nav li {
+            margin-right: 1rem;
+            font-size: 20px;
+        }
+
+        footer nav a {
+            color: #2E86C1;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            font-size: 20px;
+        }
+
+        footer nav {
+            color: #2E86C1;
+        }
+
+        footer nav a:hover {
+            color: #3D90CE;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('Screenshot\ 2023-05-07\ at\ 5.58.08\ PM.png');
+background-size: cover;
+background-blend-mode: darken;
+background-attachment: fixed;">
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html"><img src="logo.png" alt="logo" height="50px" width="50px"></a>
+            <a href="index.html" class="navbar-logo">TradeLinks</a>
+            <div class="navbar-menu">
+                <ul class="navbar-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="stocks.html">Stocks</a></li>
+                    <li><a href="tools.html">Tools</a></li>
+                    <li class="active"><a href="about us.html">About us</a></li>
+                </ul>
+            </div>
+            <div class="navbar-search">
+                <form>
+                    <input type="text" placeholder="Search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="navbar-register">
+                <a href="login.html" class="navbar-register-btn">Register</a>
+            </div>
+            <div class="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <section class="about-section">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>TradeLinks is a social trading website that allows users to share and follow investment strategies with
+                others. Our platform provides a unique way for investors to learn from each other and discover new
+                opportunities in the market.</p>
+        </div>
+    </section>
+
+    <section class="mission-section">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>At TradeLinks, our mission is to democratize finance by making it accessible to everyone. We believe that
+                anyone
+                can be a successful investor with the right tools and knowledge. Our platform is designed to help users
+                learn,
+                grow, and achieve their financial goals.</p>
+        </div>
+    </section>
+
+    <section class="feedback-section">
+        <div class="container">
+            <h2>Feedback</h2>
+            <form action="https://formspree.io/f/meqwnndq" method="POST">
+                <label>Your name:
+                    <input type="text" name="name" required autocomplete="off"></label>
+                <label>
+                    Your email:
+                    <input type="email" name="email" required autocomplete="off">
+                </label>
+
+                <label>
+                    Your message:
+                    <textarea name="message" required autocomplete="off"></textarea>
+                </label>
+                <button class="be" type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Social Trading Website. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>

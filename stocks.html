@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks | Tradelinks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .cont {
+            text-align: center;
+            color: #fff;
+        }
+
+        .cont h2 {
+            font-size: 40px;
+        }
+
+        /* span {
+            color: #ff4c29;
+        } */
+
+
+        .cont .red {
+            color: #853535;
+            font-size: 60px;
+        }
+
+        .cont .green {
+            color: #23696D;
+            font-size: 60px;
+        }
+
+        .cross {
+            text-align: center;
+            color: #fff;
+        }
+
+        .c {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .c:hover {
+            background-color: #333;
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        p {
+            font-size: large;
+        }
+
+        .navbar {
+            background-color: #333;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar-logo {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .navbar-menu {
+            display: flex;
+        }
+
+        .navbar-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar-list li {
+            margin-right: 20px;
+        }
+
+        .navbar-list li:last-child {
+            margin-right: 0;
+        }
+
+        .navbar-list a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .navbar-search {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-search form {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-search input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .navbar-search button[type="submit"] {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .navbar-search button[type="submit"]:hover {
+            background-color: #333;
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar-register {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-register-btn {
+            background-color: #fff;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .navbar-register-btn:hover {
+            background-color: #333;
+            color: #fff;
+            transition: all 0.3s ease-in-out
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 50px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        input[type="text"] {
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        button[type="submit"] {
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #4a4a4a;
+            color: white;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #555555;
+        }
+
+        .container1 {
+            background-color: rgba(55, 55, 55, 0.5);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-top: 0;
+        }
+
+        .red {
+            color: gray;
+        }
+
+        .green {
+            color: white;
+        }
+
+        .logo {
+            float: right;
+            margin-top: -80px;
+            margin-right: 80px;
+            height: 150px;
+            width: 200px;
+        }
+
+        table {
+            margin-top: 50px;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+        th {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 16px;
+            font-weight: normal;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        td:first-child {
+            width: 30%;
+        }
+
+        /* Header Styles */
+
+        footer {
+            background-color: #F5F5F5;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        footer nav li {
+            margin-right: 1rem;
+        }
+
+        footer nav a {
+            color: #2E86C1;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer nav {
+            color: #2E86C1;
+        }
+
+        footer nav a:hover {
+            color: #3D90CE;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('Screenshot\ 2023-05-07\ at\ 5.58.08\ PM.png');
+background-size: cover;
+background-blend-mode: darken;
+background-attachment: fixed;">
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html"><img src="logo.png" alt="logo" height="50px" width="50px"></a>
+            <a href="index.html" class="navbar-logo">TradeLinks</a>
+            <div class="navbar-menu">
+                <ul class="navbar-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="stocks.html">Stocks</a></li>
+                    <li><a href="tools.html">Tools</a></li>
+                    <li><a href="about us.html">About us</a></li>
+                </ul>
+            </div>
+            <div class="navbar-search">
+                <form>
+                    <input type="text" placeholder="Search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="navbar-register">
+                <a href="login.html" class="navbar-register-btn">Register</a>
+            </div>
+            <div class="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <h1>What are you looking for Today?</h1>
+    <form class="search-bar">
+        <input type="text" placeholder="Search Stocks" id="search">
+        <button type="submit" for="search">Search</button>
+    </form>
+    <section>
+        <div class="container1">
+            <h2><span class="red">Reliance Industries.Ltd :</span> <span class="green">2356 INR</span></h2>
+            <img src="Reliance-Industries-Limited-RIL-Logo-1966.png" alt="Reliancel logo" class="logo">
+            <table border="2px" style="table-layout: auto;">
+                <tr>
+                    <th>NSE</th>
+                    <th>Market Cap</th>
+                    <th>P/E Ratio </th>
+                    <th>High</th>
+                    <th>Low</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>15.94LCr</td>
+                    <td>25.07</td>
+                    <td>2365.80</td>
+                    <td>2342.00</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section>
+        <div class="container1">
+            <h2><span class="red">Tata Consultacy Services.Ltd:</span><span class="green">
+                    3192.00 INR</span></h2>
+            <img src="Tata_Consultancy_Services_Logo.svg.png" alt="tcs logo" class="logo">
+            <table border="2px" style="table-layout: auto;">
+                <tr>
+                    <th>NSE</th>
+                    <th>Market Cap</th>
+                    <th>P/E Ratio </th>
+                    <th>High</th>
+                    <th>Low</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>11.67LCr</td>
+                    <td>28.79</td>
+                    <td>3230.00</td>
+                    <td>3180.00</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section>
+        <div class="container1">
+            <h2><span class="red">HDFC BankLtd:</span><span class="green"> 1695.00
+                    INR</span> </h2>
+            <img src="HDFC-Bank-logo.png" alt="hdfc logo" class="logo">
+            <table border="2px" style="table-layout: auto;">
+                <tr>
+                    <th>NSE</th>
+                    <th>Market Cap</th>
+                    <th>P/E Ratio </th>
+                    <th>High</th>
+                    <th>Low</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> 9.45LCr</td>
+                    <td>21.79</td>
+                    <td>1697.05</td>
+                    <td>1697.05</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section>
+        <div class="container1">
+            <h2><span class="red">Infosys Ltd: </span><span class="green"> 1383.40
+                    INR</span></h2>
+            <img src="Infosys_logo.svg.png" alt="" class="logo">
+            <table border="2px" style="table-layout: auto;">
+                <tr>
+                    <th>NSE</th>
+                    <th>Market Cap</th>
+                    <th>P/E Ratio </th>
+                    <th>High</th>
+                    <th>Low</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> 5.74LCr</td>
+                    <td> 24.56</td>
+                    <td>1411.05</td>
+                    <td>1383.00</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section>
+        <div class="container1">
+            <h2><span class="red">ICICI Bank Ltd:</span><span class="green">
+                    898.00INR</span>
+            </h2>
+            <img src="2560px-ICICI_Bank_Logo.svg.png" alt="" class="logo">
+            <table border="2px" style="table-layout: auto;">
+                <tr>
+                    <th>NSE</th>
+                    <th>Market Cap</th>
+                    <th>P/E Ratio </th>
+                    <th>High</th>
+                    <th>Low</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> 6.27LCr</td>
+                    <td> 19.97</td>
+                    <td>901.65</td>
+                    <td>886.50</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <br>
+    <br>
+
+    <footer>
+        <p>&copy; 2023 Social Trading Website. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>

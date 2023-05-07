@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-image: url('Screenshot\ 2023-05-07\ at\ 5.58.08\ PM.png');
+background-size: cover;
+background-blend-mode: darken;
+background-attachment: fixed;">
+    <div class="wrapper">
+        <div class="title">
+            Signup
+        </div>
+        <form action="https://formspree.io/f/xjvdlljj" method="POST">
+            <div class="field">
+                <input type="text" name="Full Name" required autocomplete="off">
+                <label>Full Name</label>
+            </div>
+            <div class="field">
+                <input type="email" name="Email Address" required autocomplete="off">
+                <label>Email Address</label>
+            </div>
+            <div class="field">
+                <input type="password" name="Password" required>
+                <label>Password</label>
+            </div>
+            <div class="field">
+                <input type="password" name="Confirm Password" required>
+                <label>Confirm Password</label>
+            </div>
+            <div class="content">
+                <div class="checkbox">
+                    <input type="checkbox" id="agree">
+                    <label for="agree">I agree to the terms and conditions</label>
+                </div>
+            </div>
+            <div class="field">
+                <input type="submit" value="Signup">
+            </div>
+            <div class="signup-link">
+                Already a member? <a href="signup.html">Login now</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
