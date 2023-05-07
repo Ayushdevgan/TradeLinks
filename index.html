@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TradeLinks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .cont {
+            text-align: center;
+            color: #fff;
+        }
+
+        .cont h2 {
+            font-size: 40px;
+        }
+
+        /* span {
+            color: #ff4c29;
+        } */
+
+
+        .cont .red {
+            color: #853535;
+            font-size: 60px;
+        }
+
+        .cont .green {
+            color: #23696D;
+            font-size: 60px;
+        }
+
+        .cross {
+            text-align: center;
+            color: #fff;
+        }
+
+        .c {
+            background-color: #4a4a4a;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .cd {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .c:hover {
+            background-color: #333;
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .cd:hover {
+            background-color: #333;
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        p {
+            font-size: large;
+        }
+
+        .navbar {
+            background-color: #333;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar-logo {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .navbar-menu {
+            display: flex;
+        }
+
+        .navbar-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar-list li {
+            margin-right: 20px;
+        }
+
+        .navbar-list li:last-child {
+            margin-right: 0;
+        }
+
+        .navbar-list a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .navbar-search {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-search form {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-search input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .navbar-search button[type="submit"] {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .navbar-search button[type="submit"]:hover {
+            background-color: #333;
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar-register {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-register-btn {
+            background-color: #fff;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .navbar-register-btn:hover {
+            background-color: #333;
+            color: #fff;
+            transition: all 0.3s ease-in-out
+        }
+
+        .wrapper {
+            display: flex;
+        }
+
+        /* .wrapper .static-txt {
+            color: #fff;
+            font-size: 60px;
+            font-weight: 400;
+        } */
+
+        .wrapper .dynamic-txts {
+            margin-left: 15px;
+            height: 90px;
+            line-height: 90px;
+            padding-left: 300px;
+            overflow: hidden;
+        }
+
+        .dynamic-txts li {
+            list-style: none;
+            color: white;
+            font-size: 65px;
+            font-weight: 500;
+            position: relative;
+            top: 0;
+            animation: slide 6s steps(4) infinite;
+        }
+
+        @keyframes slide {
+            100% {
+                top: -360px;
+            }
+        }
+
+        .dynamic-txts li span {
+            position: relative;
+            margin: 5px 0;
+            line-height: 90px;
+        }
+
+        .dynamic-txts li span::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            /* background: rgba(0, 0, 0, 0.7);
+            border-left: 2px solid #5c5c5c; */
+            animation: typing 1s steps(50) infinite;
+        }
+
+        /* 
+        @keyframes typing {
+
+            40%,
+            60% {
+                left: calc(100% + 30px);
+            }
+
+            100% {
+                left: 0;
+            }
+        } */
+        footer {
+            background-color: #F5F5F5;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        footer nav li {
+            margin-right: 1rem;
+        }
+
+        footer nav a {
+            color: #2E86C1;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer nav {
+            color: #2E86C1;
+        }
+
+        footer nav a:hover {
+            color: #3D90CE;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('Screenshot\ 2023-05-07\ at\ 5.58.08\ PM.png');
+            background-size: cover;
+            background-blend-mode: darken;
+            background-attachment: fixed;">
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html"><img src="logo.png" alt="logo" height="50px" width="50px"></a>
+            <a href="index.html" class="navbar-logo">TradeLinks</a>
+            <div class="navbar-menu">
+                <ul class="navbar-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="stocks.html">Stocks</a></li>
+                    <li><a href="tools.html">Tools</a></li>
+                    <li><a href="about us.html">About us</a></li>
+                </ul>
+            </div>
+            <div class="navbar-search">
+                <form>
+                    <input type="text" placeholder="Search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="navbar-register">
+                <a href="login.html" class="navbar-register-btn">Register</a>
+            </div>
+            <div class="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <div class="cont">
+
+
+                <h2>Trade smarter, not harder <br><b><span class="green">Trade</span><span class="red">Links</span></b>
+                </h2>
+                <div class="wrapper">
+                    <!-- <div class="static-txt">I'm a</div> -->
+                    <ul class="dynamic-txts">
+                        <li><span>Userfriendly</span></li>
+                        <li><span>Commision Free Trading</span></li>
+                        <li><span>Ranking System</span></li>
+                        <li><span>Advance Risk Management</span></li>
+                        <li><span>Advance Security System</span></li>
+                        <li><span>Quick Communication</span></li>
+                    </ul>
+                </div>
+                <p>"Experience the power of community-driven trading with our social trading app.<br> Connect withtop
+                    traders,
+                    follow their moves, and make informed investment decisions."</p>
+                <a href="signup.html" class="cd">Get Started</a>
+            </div>
+        </section>
+
+        <Section class="cross">
+            <h1>Download the App Now !</h1>
+            <a href="https://play.google.com/store/apps" class="c" target="_blank">Google
+                Play</a>
+            <a href="https://www.apple.com/in/app-store/" class="c" target="_blank">App
+                Store</a>
+        </Section>
+    </main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script>
+        const navbarToggle = document.querySelector('.navbar-toggle');
+        const navbarMenu = document.querySelector('.navbar-menu');
+
+        navbarToggle.addEventListener('click', () => {
+            navbarMenu.classList.toggle('active');
+        });
+
+    </script>
+    <footer>
+        <p>&copy; 2023 Social Trading Website. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
